@@ -1,0 +1,14 @@
+﻿.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+    .product-item h2 {
+        margin-top: 0;
+    }
+
+    .product-item p {
+        margin-bottom: 5px;
+    }
