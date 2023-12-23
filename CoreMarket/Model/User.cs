@@ -9,5 +9,6 @@ namespace CoreMarket.Model
     {
         public string username {  get; set; }
         public string password { get; set; }
+        public string title { get; set; }
     }
 }

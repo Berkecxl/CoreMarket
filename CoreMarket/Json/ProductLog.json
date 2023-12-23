@@ -1,0 +1,9 @@
+[
+  {
+    "Action": "Add",
+    "ProductName": "deneme2",
+    "Count": 2,
+    "BoughtPrice": 2.0,
+    "DateTime": "2023-12-23T12:08:41.2207402+03:00"
+  }
+]

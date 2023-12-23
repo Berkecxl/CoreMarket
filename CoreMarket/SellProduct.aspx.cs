@@ -38,21 +38,29 @@ namespace CoreMarket
 
             Product selectedProduct = ProductService.GetProductById(productId);
 
-            if (selectedProduct != null && selectedProduct.Count >= sellQuantity)
+            if (selectedProduct != null)
             {
-                decimal salePrice = selectedProduct.Price; 
-                decimal purchasePrice = selectedProduct.PurcasedPrice; 
-                decimal profit = (salePrice - purchasePrice) * sellQuantity; 
-                selectedProduct.Count -= sellQuantity; 
+                if (selectedProduct.Count >= sellQuantity && sellQuantity > 0)
+                {
+                    decimal salePrice = selectedProduct.Price;
+                    decimal purchasePrice = selectedProduct.PurcasedPrice;
+                    decimal profit = (salePrice - purchasePrice) * sellQuantity;
 
-                ProductService.UpdateProduct(selectedProduct); 
+                    selectedProduct.Count -= sellQuantity;
+                    ProductService.SellProduct(selectedProduct);
 
-                lblSaleResult.Text = "Satış başarılı. Kazanç: " + profit.ToString("C");
-                lblSaleResult.Visible = true;
+                    lblSaleResult.Text = "Satış başarılı. Kar: " + profit.ToString("C");
+                    lblSaleResult.Visible = true;
+                }
+                else
+                {
+                    lblSaleResult.Text = "Geçersiz miktar veya yetersiz stok!";
+                    lblSaleResult.Visible = true;
+                }
             }
             else
             {
-                lblSaleResult.Text = "Yetersiz stok veya geçersiz miktar!";
+                lblSaleResult.Text = "Ürün bulunamadı!";
                 lblSaleResult.Visible = true;
             }
         }
