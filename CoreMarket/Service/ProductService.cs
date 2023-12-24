@@ -25,7 +25,7 @@ namespace CoreMarket.Service
             List<Product> productList = GetProductList();
             productList.Add(product);
             File.WriteAllText(HttpContext.Current.Server.MapPath(Constants.ProductsJson), JsonConvert.SerializeObject(productList));
-            LogProduct("Add", product.Name, product.Count, product.Price);
+            LogProduct("Add", product.Name, product.Count, product.PurcasedPrice);
         }
 
         public static Product GetProductById(int productId)
@@ -63,6 +63,7 @@ namespace CoreMarket.Service
             }
             
             SaveProductList(productList);
+            LogProduct("Sell", product.Name, product.Count, product.Price);
         }
 
         private static void SaveProductList(List<Product> productList)
@@ -97,8 +98,8 @@ namespace CoreMarket.Service
 
             productLogs.Add(log);
 
-            string updatedJson = JsonConvert.SerializeObject(productLogs);
-            File.WriteAllText(HttpContext.Current.Server.MapPath(Constants.ProductLogJson), JsonConvert.SerializeObject(updatedJson));
+            string updatedJson = JsonConvert.SerializeObject(productLogs, Formatting.Indented);
+            File.WriteAllText(logFilePath, updatedJson);
         }
     }
 }
