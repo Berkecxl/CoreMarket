@@ -4,11 +4,9 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CoreMarket
 {
@@ -16,7 +14,8 @@ namespace CoreMarket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<ProductLog> productLogList = GetProductLog(); 
+            CheckUserSession();
+            List<ProductLog> productLogList = GetProductLog();
 
             StringBuilder htmlBuilder = new StringBuilder();
             htmlBuilder.Append("<ul>");
@@ -36,6 +35,14 @@ namespace CoreMarket
 
             List<ProductLog> logList = JsonConvert.DeserializeObject<List<ProductLog>>(jsonFile);
             return logList;
+        }
+
+        private void CheckUserSession()
+        {
+            if (Session["CurrentUser"] == null)
+            {
+                Response.Redirect("Auth.aspx"); 
+            }
         }
     }
 }

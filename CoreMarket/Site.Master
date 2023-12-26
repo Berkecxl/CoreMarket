@@ -50,6 +50,8 @@
                         <li class="nav-item"><a class="nav-link"  runat="server" href="~/Products.aspx">Ürün Yönetme</a></li>
                         <li class="nav-item"><a class="nav-link"  runat="server" href="~/AddProduct.aspx">Ürün Ekle</a></li>
                         <li class="nav-item"><a class="nav-link"  runat="server" href="~/SellProduct.aspx">Ürün Sat</a></li>
+                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/Profit.aspx">Kar/Ciro</a></li>
+
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link"  runat="server" href="~/Auth.aspx">Çıkış</a></li>

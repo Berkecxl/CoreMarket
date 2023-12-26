@@ -25,12 +25,12 @@ namespace CoreMarket.Service
             List<Product> productList = GetProductList();
             productList.Add(product);
             File.WriteAllText(HttpContext.Current.Server.MapPath(Constants.ProductsJson), JsonConvert.SerializeObject(productList));
-            LogProduct("Add", product.Name, product.Count, product.PurcasedPrice);
+            LogProduct("Add", product.Name, product.Count, product.PurcasedPrice, product.Price);
         }
 
         public static Product GetProductById(int productId)
         {
-            List<Product> productList = GetProductList(); 
+            List<Product> productList = GetProductList();
 
             return productList.FirstOrDefault(product => product.Id == productId);
         }
@@ -44,7 +44,7 @@ namespace CoreMarket.Service
             if (product != null)
             {
                 int index = productList.FindIndex(p => p.Id == updatedProduct.Id);
-               
+
                 if (index != -1)
                 {
                     productList[index].Count = updatedProduct.Count;
@@ -61,9 +61,9 @@ namespace CoreMarket.Service
             {
                 //TODO hata mesajı
             }
-            
+
             SaveProductList(productList);
-            LogProduct("Sell", product.Name, product.Count, product.Price);
+            LogProduct("Sell", product.Name, product.Count, product.PurcasedPrice, product.Price);
         }
 
         private static void SaveProductList(List<Product> productList)
@@ -73,7 +73,7 @@ namespace CoreMarket.Service
             File.WriteAllText(HttpContext.Current.Server.MapPath(Constants.ProductsJson), JsonConvert.SerializeObject(productList));
         }
 
-        public static void LogProduct(string action, string productName, int count, decimal price)
+        public static void LogProduct(string action, string productName, int count, decimal boughtPrice, decimal soldPrice)
         {
             string logFilePath = HttpContext.Current.Server.MapPath(Constants.ProductLogJson);
             List<ProductLog> productLogs = new List<ProductLog>();
@@ -92,7 +92,8 @@ namespace CoreMarket.Service
                 Action = action,
                 ProductName = productName,
                 Count = count,
-                BoughtPrice = price,
+                BoughtPrice = boughtPrice,
+                SoldPrice = soldPrice,
                 DateTime = DateTime.Now
             };
 
@@ -100,6 +101,23 @@ namespace CoreMarket.Service
 
             string updatedJson = JsonConvert.SerializeObject(productLogs, Formatting.Indented);
             File.WriteAllText(logFilePath, updatedJson);
+        }
+
+        public static List<ProductLog> GetProductLogs()
+        {
+            string logFilePath = HttpContext.Current.Server.MapPath(Constants.ProductLogJson);
+            List<ProductLog> productLogs = new List<ProductLog>();
+
+            if (File.Exists(logFilePath))
+            {
+                string jsonData = File.ReadAllText(logFilePath);
+                if (!string.IsNullOrEmpty(jsonData))
+                {
+                    productLogs = JsonConvert.DeserializeObject<List<ProductLog>>(jsonData);
+                }
+            }
+
+            return productLogs;
         }
     }
 }

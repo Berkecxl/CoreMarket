@@ -11,6 +11,7 @@ namespace CoreMarket.Model
         public string ProductName { get; set; }
         public int Count { get; set; }
         public decimal BoughtPrice { get; set; }
+        public decimal SoldPrice { get; set; }
         public DateTime DateTime { get; set; }
     }
 }

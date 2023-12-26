@@ -1,9 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AddProduct.aspx.cs" Inherits="CoreMarket.AddProduct" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+    <head>
+        <link rel="stylesheet" href="Content/AddProduct.css" />
+    </head>
+    <div class="urunEkle">
         <h2>Ürün Ekle</h2>
-        <div>
+        <div >
             <label for="txtName">Ürün Adı:</label>
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
         </div>

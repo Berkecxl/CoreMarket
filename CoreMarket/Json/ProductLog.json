@@ -1,16 +1,16 @@
 [
-  {
-    "Action": "Add",
-    "ProductName": "deneme2",
-    "Count": 2,
-    "BoughtPrice": 2.0,
-    "DateTime": "2023-12-23T12:08:41.2207402+03:00"
-  },
-  {
-    "Action": "Add",
-    "ProductName": "deneme12",
-    "Count": 12,
-    "BoughtPrice": 12.0,
-    "DateTime": "2023-12-24T21:58:49.9174872+03:00"
-  }
+    {
+        "Action": "Add",
+        "ProductName": "deneme2",
+        "Count": 2,
+        "BoughtPrice": 2.0,
+        "DateTime": "2023-12-23T12:08:41.2207402+03:00"
+    },
+    {
+        "Action": "Add",
+        "ProductName": "deneme12",
+        "Count": 12,
+        "BoughtPrice": 12.0,
+        "DateTime": "2023-12-24T21:58:49.9174872+03:00"
+    }
 ]
