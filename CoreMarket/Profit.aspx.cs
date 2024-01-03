@@ -2,10 +2,6 @@
 using CoreMarket.Service;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CoreMarket
 {
@@ -41,9 +37,9 @@ namespace CoreMarket
 
             decimal totalProfit = totalRevenue - totalCost;
 
-            revenueLabel.Text = $"Total Revenue: {totalRevenue:C}";
-            costLabel.Text = $"Total Cost: {totalCost:C}";
-            profitLabel.Text = $"Total Profit: {totalProfit:C}";
+            revenueLabel.Text = $"Toplam Ciro: {totalRevenue:C}";
+            //costLabel.Text = $"Total Cost: {totalCost:C}";
+            profitLabel.Text = $"Toplam Kâr: {totalProfit:C}";
         }
         private void CheckUserAccess()
         {

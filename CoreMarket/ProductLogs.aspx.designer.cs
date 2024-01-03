@@ -11,25 +11,16 @@ namespace CoreMarket
 {
 
 
-    public partial class Profit
+    public partial class ProductLogs
     {
 
         /// <summary>
-        /// revenueLabel control.
+        /// litProductLog control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label revenueLabel;
-
-        /// <summary>
-        /// profitLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label profitLabel;
+        protected global::System.Web.UI.WebControls.Literal litProductLog;
     }
 }

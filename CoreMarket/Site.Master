@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -46,28 +46,56 @@
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/Products.aspx">Ürün Yönetme</a></li>
-                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/AddProduct.aspx">Ürün Ekle</a></li>
-                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/SellProduct.aspx">Ürün Sat</a></li>
-                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/Profit.aspx">Kar/Ciro</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ProductLogs.aspx">Ürün Geçmişi</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Products.aspx">Ürün Yönetme</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AddProduct.aspx">Ürün Ekle</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/SellProduct.aspx">Ürün Sat</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Profit.aspx">Kar/Ciro</a></li>
 
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link"  runat="server" href="~/Auth.aspx">Çıkış</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Auth.aspx">Çıkış</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
-            <hr />
+            <div class="container">
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                            <svg class="bi" width="30" height="24">
+                                <use xlink:href="#bootstrap"></use></svg>
+                        </a>
+                        <span class="mb-3 mb-md-0 text-body-secondary">© <%: DateTime.Now.Year %> - CoreTeam</span>
+                    </div>
+
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="https://twitter.com">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg#Twitter_Logo"></use></svg></a></li>
+                        
+
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use></svg></a></li>
+
+                        <li class="ms-3">
+                            <a class="text-body-secondary" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use></svg></a></li>
+                    </ul>
+                </footer>
+            </div
         </div>
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - CoreTeam</p>
-            </footer>
+
     </form>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>

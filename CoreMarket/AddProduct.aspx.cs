@@ -8,7 +8,20 @@ namespace CoreMarket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                string script = @"
+                <script>
+                    function preventNegative(event) {
+                        var input = event.target;
+                        if (input.value < 0) {
+                            input.value = 0;
+                        }
+                    }
+                </script>";
 
+                ClientScript.RegisterStartupScript(this.GetType(), "PreventNegativeScript", script);
+            }
         }
 
         protected void btnAddProduct_Click(object sender, EventArgs e)
@@ -32,7 +45,8 @@ namespace CoreMarket
                 ProductService.AddProduct(newProduct);
 
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Girilen bilgiler eksik ya da hatalı.');", true);
             }
 
@@ -41,8 +55,9 @@ namespace CoreMarket
 
         }
 
-        private int GenerateId(){
-        return Guid.NewGuid().GetHashCode();    
+        private int GenerateId()
+        {
+            return Guid.NewGuid().GetHashCode();
         }
     }
 }

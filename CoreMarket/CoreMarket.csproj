@@ -131,6 +131,8 @@
     <Content Include="Images\Cips.jpg" />
     <Content Include="Images\Dondurma.jpg" />
     <Content Include="Images\Soda.jpg" />
+    <Content Include="Images\Twitter.png" />
+    <Content Include="ProductLogs.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Profit.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -230,6 +232,13 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductLog.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ProductLogs.aspx.cs">
+      <DependentUpon>ProductLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductLogs.aspx.designer.cs">
+      <DependentUpon>ProductLogs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

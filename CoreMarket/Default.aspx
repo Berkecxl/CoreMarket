@@ -7,10 +7,6 @@
         <link rel="stylesheet" href="Content/Home.css" />
     </head>
     <body>
-        <div>
-            <h2>Product Log</h2>
-            <asp:Literal ID="litProductLog" runat="server"></asp:Literal>
-        </div>
         <div id="carouselExampleIndicators" class="carousel slide mb-4">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -47,8 +43,8 @@
                 <div class="card mt-4">
                     <img src="Images/Dondurma.jpg" class="card-img-top" alt="Fotoğraf Bulunamadı.">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <h5 class="card-title">Dondurma</h5>
+                        <p class="card-text">Dondurma, süt, şeker ve çeşitli lezzetlendiricilerin karışımının dondurularak yapılan tatlı bir atıştırmalıktır. Antik çağlardan günümüze kadar evrimleşen dondurma, farklı kültürlerde gelişmiş ve popüler hale gelmiştir. İçeriği genellikle süt ürünleri, şeker ve çeşitli tatlandırıcılar içerir. Dondurma, çeşitli lezzetlerle zenginleştirilerek üretilir ve geniş bir tüketici kitlesine hitap eder. Yıl boyunca tercih edilen bu serin tatlı, sıcak hava günlerinde özellikle popülerdir.</p>
                     </div>
                 </div>
             </div>
@@ -56,8 +52,8 @@
                 <div class="card mt-4">
                     <img src="Images/Soda.jpg" class="card-img-top" alt="Fotoğraf Bulunamadı.">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">Meyve Suyu</h5>
+                        <p class="card-text">Meyve suyu, meyvelerin sıkılması veya ezilmesiyle elde edilen bir içecektir. Doğal meyve aromalarını ve tatlarını içerir, taze veya konsantre meyve suları kullanılarak yapılabilir. Besleyici ve vitamin açısından zengin olan meyve suları, genellikle serinletici bir içecek olarak tercih edilir. Ticari meyve suları bazen şeker veya koruyucu maddeler içerebilir. Sağlıklı bir içecek alternatifi olarak kahvaltıda veya gün içinde sıkça tüketilir.</p>
                     </div>
                 </div>
             </div>
@@ -65,8 +61,8 @@
                 <div class="card mt-4">
                     <img src="Images/Cikolata.jpg" class="card-img-top" alt="Fotoğraf Bulunamadı.">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Çikolata</h5>
+                        <p class="card-text">Çikolata, kakao çekirdekleri, kakao yağı ve şekerin karışımından yapılan bir tatlıdır. Antik Maya ve Aztek kültürlerinden günümüze evrimleşmiştir. Günümüzde sütlü, bitter, beyaz ve çeşitli içeriklere sahip farklı türleri bulunur. Sevilen bir lezzet olan çikolata, atıştırmalıklardan içeceklere kadar çeşitli şekillerde tüketilir ve içerdiği maddeler nedeniyle insanların ruh halini iyileştirebilir.</p>
                     </div>
                 </div>
             </div>
@@ -74,36 +70,13 @@
                 <div class="card mt-4">
                     <img src="Images/Cips.jpg" class="card-img-top" alt="Fotoğraf Bulunamadı.">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">Cips</h5>
+                        <p class="card-text">Cips, ince dilimlenmiş patateslerin kızartılması veya fırınlanmasıyla yapılan popüler bir atıştırmalıktır. İlk kez 19. yüzyılda Amerika'da keşfedildi ve zamanla endüstriyel üretimle geniş bir popülerlik kazandı. Çeşitli lezzetlerde üretilen patates cipsi, evde, partilerde veya günlük yaşamda sıkça tüketilen bir atıştırmalıktır.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                        <svg class="bi" width="30" height="24">
-                            <use xlink:href="#bootstrap"></use></svg>
-                    </a>
-                    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
-                </div>
-
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-body-secondary" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#twitter"></use></svg></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#instagram"></use></svg></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use></svg></a></li>
-                </ul>
-            </footer>
-        </div>
     </body>
     </html>
 </asp:Content>
