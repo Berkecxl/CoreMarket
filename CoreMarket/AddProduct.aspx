@@ -16,11 +16,11 @@
         </div>
         <div>
             <label for="txtPrice">Satılacak Fiyat:</label>
-            <asp:TextBox ID="txtPrice" runat="server" TextMode="Number" oninput="preventNegative(event)"></asp:TextBox>
+            <asp:TextBox ID="txtPrice" runat="server"  oninput="preventNegative(event)"></asp:TextBox>
         </div>
         <div>
             <label for="txtPurcasedPrice">Alınan Fiyat:</label>
-            <asp:TextBox ID="txtPurcasedPrice" runat="server" TextMode="Number" oninput="preventNegative(event)"></asp:TextBox>
+            <asp:TextBox ID="txtPurcasedPrice" runat="server" oninput="preventNegative(event)"></asp:TextBox>
         </div>
         <div>
             <asp:Button ID="btnAddProduct" runat="server" Text="Ürün Ekle" OnClick="btnAddProduct_Click" />

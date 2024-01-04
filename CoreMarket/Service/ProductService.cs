@@ -25,7 +25,7 @@ namespace CoreMarket.Service
             List<Product> productList = GetProductList();
             productList.Add(product);
             File.WriteAllText(HttpContext.Current.Server.MapPath(Constants.ProductsJson), JsonConvert.SerializeObject(productList));
-            LogProduct("Add", product.Name, product.Count, product.PurcasedPrice, product.Price);
+            LogProduct("Add", product.Name, product.Count, product.PurcasedPrice/10 , product.Price/10 );
         }
 
         public static Product GetProductById(int productId)
@@ -87,17 +87,20 @@ namespace CoreMarket.Service
                 }
             }
 
-            ProductLog log = new ProductLog
+            ProductLog newLog = new ProductLog
             {
                 Action = action,
                 ProductName = productName,
                 Count = count,
-                BoughtPrice = boughtPrice,
+                BoughtPrice = boughtPrice*10,
                 SoldPrice = soldPrice,
                 DateTime = DateTime.Now
             };
 
-            productLogs.Add(log);
+            productLogs.Add(newLog);
+
+            DateTime oneMonthAgo = DateTime.Now.AddMonths(-1);
+            productLogs = productLogs.Where(log => log.DateTime >= oneMonthAgo).ToList();
 
             string updatedJson = JsonConvert.SerializeObject(productLogs, Formatting.Indented);
             File.WriteAllText(logFilePath, updatedJson);
@@ -114,6 +117,9 @@ namespace CoreMarket.Service
                 if (!string.IsNullOrEmpty(jsonData))
                 {
                     productLogs = JsonConvert.DeserializeObject<List<ProductLog>>(jsonData);
+                    DateTime oneMonthAgo = DateTime.Now.AddMonths(-1);
+
+                    productLogs = productLogs.OrderByDescending(log => log.DateTime).ToList();
                 }
             }
 

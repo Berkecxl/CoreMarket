@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="AddProduct.aspx" />
     <Content Include="Auth.aspx" />
+    <Content Include="Content\ProductLog.css" />
     <Content Include="Content\AddProduct.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

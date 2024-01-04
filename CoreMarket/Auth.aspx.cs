@@ -12,7 +12,7 @@ namespace CoreMarket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Remove("CurrentUser");
         }
 
         protected void btnGiris_Click(object sender, EventArgs e)

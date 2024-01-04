@@ -1,26 +1,34 @@
 [
   {
     "Action": "Add",
-    "ProductName": "deneme2",
-    "Count": 2,
-    "BoughtPrice": 2.0,
-    "SoldPrice": 0.0,
-    "DateTime": "2023-12-23T12:08:41.2207402+03:00"
+    "ProductName": "deneme12",
+    "Count": 12,
+    "BoughtPrice": 0.11,
+    "SoldPrice": 0.22,
+    "DateTime": "2024-01-04T12:23:45.2862815+03:00"
+  },
+  {
+    "Action": "Sell",
+    "ProductName": "deneme12",
+    "Count": 12,
+    "BoughtPrice": 11.00,
+    "SoldPrice": 22.00,
+    "DateTime": "2024-01-04T12:25:26.5620246+03:00"
   },
   {
     "Action": "Add",
     "ProductName": "deneme12",
     "Count": 12,
-    "BoughtPrice": 12.0,
-    "SoldPrice": 0.0,
-    "DateTime": "2023-12-24T21:58:49.9174872+03:00"
+    "BoughtPrice": 1.10,
+    "SoldPrice": 0.22,
+    "DateTime": "2024-01-04T12:31:26.7737957+03:00"
   },
   {
     "Action": "Sell",
-    "ProductName": "Çikolata",
-    "Count": 99,
-    "BoughtPrice": 4.50,
-    "SoldPrice": 5.99,
-    "DateTime": "2024-01-02T20:55:05.8936027+03:00"
+    "ProductName": "deneme12",
+    "Count": 12,
+    "BoughtPrice": 11.0,
+    "SoldPrice": 2.2,
+    "DateTime": "2024-01-04T12:31:46.1786806+03:00"
   }
 ]

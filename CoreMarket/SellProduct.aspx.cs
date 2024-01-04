@@ -26,7 +26,7 @@ namespace CoreMarket
 
             if (selectedProduct != null)
             {
-                lblMaxStock.Text = "Max Stock: " + selectedProduct.Count.ToString();
+                lblMaxStock.Text = "Maksimum Stok: " + selectedProduct.Count.ToString();
                 lblMaxStock.Visible = true;
             }
         }

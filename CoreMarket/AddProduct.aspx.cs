@@ -8,6 +8,8 @@ namespace CoreMarket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckUserSession();
+
             if (!Page.IsPostBack)
             {
                 string script = @"
@@ -43,7 +45,7 @@ namespace CoreMarket
                 };
 
                 ProductService.AddProduct(newProduct);
-
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Ürün başarıyla eklendi.');", true);
             }
             catch (Exception ex)
             {
@@ -58,6 +60,14 @@ namespace CoreMarket
         private int GenerateId()
         {
             return Guid.NewGuid().GetHashCode();
+        }
+
+        private void CheckUserSession()
+        {
+            if (Session["CurrentUser"] == null)
+            {
+                Response.Redirect("Auth.aspx");
+            }
         }
     }
 }

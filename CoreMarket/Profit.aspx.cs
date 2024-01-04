@@ -28,6 +28,7 @@ namespace CoreMarket
                 if (log.Action == "Sell")
                 {
                     totalRevenue += log.SoldPrice * log.Count;
+                    totalCost += log.BoughtPrice * log.Count;
                 }
                 else if (log.Action == "Add")
                 {

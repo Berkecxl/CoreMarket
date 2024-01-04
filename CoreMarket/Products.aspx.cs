@@ -18,11 +18,21 @@ namespace CoreMarket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckUserSession();
+
             if (!IsPostBack) {
                 List<Product> productList = ProductService.GetProductList();
                 
                 repeaterProducts.DataSource = productList;
                 repeaterProducts.DataBind();
+            }
+        }
+
+        private void CheckUserSession()
+        {
+            if (Session["CurrentUser"] == null)
+            {
+                Response.Redirect("Auth.aspx");
             }
         }
     }
